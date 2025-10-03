@@ -1,0 +1,159 @@
+.header {
+  width: 1200px;
+  background: #fff;
+  padding: 10px 20px 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  height: 770px;
+}
+
+.header__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.header__logo-image {
+  height: 40px;
+}
+
+.header__right-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__phone {
+  font-size: 16px;
+  color: #333;
+}
+
+.header__btn {
+  background: #4cd964;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.header__btn:hover {
+  background: #3bbf55;
+}
+
+.header__btn-big {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 25px;
+}
+
+/* Бургер */
+.header__burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.burger-line {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.burger-line.open:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.burger-line.open:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-line.open:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+.header__mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 0;
+  background: #f9f9f9;
+}
+
+/* Контент */
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.header__text-block {
+  flex: 1;
+  min-width: 280px;
+}
+
+.header__title {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #111;
+}
+
+.header__image-block {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 768px;
+    
+}
+
+.header__green-bg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 500px; /* или нужный вам размер */
+  height: 100%; /* или нужный вам размер */
+  background-color: green;
+  z-index: 0; /* чтобы был под всеми элементами */
+}
+
+.header__image {
+  position: relative;
+  z-index: 2;
+  max-height: 850px;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .header__right-section {
+    display: none;
+  }
+
+  .header__burger {
+    display: flex;
+  }
+
+  .header__content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header__image-block {
+    margin-top: 30px;
+  }
+}
