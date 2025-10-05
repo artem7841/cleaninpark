@@ -19,9 +19,29 @@ body {
   box-sizing: border-box;
 }
 
+.container2 {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.container3 {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
 h2 {
   font-size: 42px;
   font-weight: 600; /* Тонкое начертание */
+  color: black;
+}
+
+h3 {
+  font-size: 27px;
+  font-weight: 800; /* Тонкое начертание */
   color: black;
 }
 
@@ -80,7 +100,20 @@ h2 {
   padding-left: 75px;
   padding-top: 25px;
   padding-bottom: 25px;
-  font-weight: 600; /* Тонкое начертание */
+  font-weight: 600; 
+}
+
+.btn2 {
+  background: #5cd65c;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 24px;
+  width: 100%;
+  height: 66px;
+  font-weight: 600; 
 }
 
 /* Services */
@@ -280,7 +313,7 @@ h2 {
 .slider-container {
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 600px;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -355,10 +388,10 @@ h2 {
 .slider-labels {
   position: absolute;
   bottom: 20px;
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: space-between;
-  padding: 0 30px;
+  margin-left: 5%;
   z-index: 5;
 }
 
@@ -440,7 +473,7 @@ h2 {
 .calc-form {
   display: flex;
   flex-direction: column;
-  max-width: 350px;
+  max-width: 500px;
   margin: 20px auto;
   gap: 10px;
 }
@@ -449,7 +482,9 @@ h2 {
 .calc-form textarea {
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 20px;
+  font-size: 25px;
+  padding: 20px;
 }
 .price-result {
   margin-top: 15px;
@@ -458,37 +493,227 @@ h2 {
 }
 
 /* Contacts */
+/* Основной контейнер */
 .contacts {
-  padding: 60px 20px;
-}
-.contacts-grid {
+  width: 100%;
+  background-color: #f9f9f9;
+  padding: 100px 0;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
-  margin-top: 20px;
 }
-.contact-form {
+
+.contacts-container {
+  max-width: 1400px;
+  width: 100%;
+  padding: 0 40px;
+}
+
+.contacts-title {
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+/* Сетка */
+.contacts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+/* Левая колонка */
+.contacts-info {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 300px;
-}
-.contact-form input,
-.contact-form textarea {
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
 }
 
-/* Footer */
-.footer {
-  background: #111;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
+.contacts-item h3 {
+  font-size: 27px;
+  font-weight: 700;
+  margin-bottom: 5px;
 }
+
+.contacts-item p {
+  font-size: 23px;
+  color: black;
+  font-weight: 500;
+}
+
+.contacts-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.telegram {
+  background-color: #0088cc;
+  font-size: 20px;
+}
+
+.telegram:hover {
+  opacity: 0.85;
+}
+
+.whatsapp {
+  background-color: #25d366;
+  font-size: 20px;
+}
+
+.whatsapp:hover {
+  opacity: 0.85;
+}
+
+.contacts-note {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Правая колонка (форма) */
+.contacts-form-block h3 {
+  font-size: 27px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.contacts-form-block p {
+  color: black;
+  margin-bottom: 30px;
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.contacts-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.contacts-form input,
+.contacts-form textarea {
+  width: 100%;
+  padding: 16px;
+  background-color: #e2e2e2;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+
+.contacts-form input:focus,
+.contacts-form textarea:focus {
+  box-shadow: 0 0 0 2px #4bc65b;
+}
+
+.contacts-form textarea {
+  height: 160px;
+  resize: none;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 16px;
+  background-color: #5cd267;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: #4bc65b;
+}
+
+/* ------------------ Адаптив ------------------ */
+
+/* Для экранов до 1200px */
+@media (max-width: 1200px) {
+  .contacts-container {
+    max-width: 1100px;
+  }
+
+  .contacts-grid {
+    gap: 60px;
+  }
+}
+
+/* Для планшетов до 992px */
+@media (max-width: 992px) {
+  .contacts-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .contacts-title {
+    font-size: 34px;
+  }
+
+  .contacts-info,
+  .contacts-form-block {
+    text-align: center;
+  }
+
+  .contacts-buttons {
+    justify-content: center;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+/* Для телефонов до 600px */
+@media (max-width: 600px) {
+  .contacts {
+    padding: 60px 0;
+  }
+
+  .contacts-title {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .contacts-item h3 {
+    font-size: 20px;
+  }
+
+  .contacts-item p {
+    font-size: 16px;
+  }
+
+  .contacts-form-block h3 {
+    font-size: 22px;
+  }
+
+  .btn,
+  .btn-submit {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+}
+
+
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -543,3 +768,29 @@ h2 {
     padding: 0 15px;
   }
 }
+
+
+/* Form */
+.form-group {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.error {
+  border: 2px solid #ff4444 !important;
+}
+
+.error-message {
+  color: #ff4444;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
