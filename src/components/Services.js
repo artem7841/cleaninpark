@@ -5,32 +5,40 @@ import serv_2 from "../assets/serv_2.jpg";
 import serv_3 from "../assets/serv_3.jpg";
 import serv_4 from "../assets/serv_4.jpg";
 
+import { useParams, Link } from "react-router-dom";
+
+
 const Services = () => {
   const services = [
     { 
       title: "Генеральная уборка", 
       img: serv_3,
-      description: "Полная уборка всех помещений с чисткой труднодоступных мест и дезинфекцией поверхностей"
+      description: "Полная уборка всех помещений с чисткой труднодоступных мест и дезинфекцией поверхностей",
+      link: "/service/general-cleaning", 
     },
     { 
       title: "После ремонта", 
       img: serv_1,
-      description: "Уборка строительной пыли, удаление следов ремонта, чистка окон и подготовка к проживанию"
+      description: "Уборка строительной пыли, удаление следов ремонта, чистка окон и подготовка к проживанию",
+      link: "/service/general-cleaning", 
     },
     { 
       title: "Поддерживающая", 
       img: serv_4,
-      description: "Регулярная уборка для поддержания чистоты: влажная уборка, пылесос, чистка санузлов"
+      description: "Регулярная уборка для поддержания чистоты: влажная уборка, пылесос, чистка санузлов",
+      link: "/service/general-cleaning", 
     },
     { 
       title: "Для офисов", 
       img: serv_2,
-      description: "Комплексная уборка офисных помещений, переговорных, кухонь и зон отдыха"
+      description: "Комплексная уборка офисных помещений, переговорных, кухонь и зон отдыха",
+      link: "/service/general-cleaning", 
     },
     { 
       title: "Мойка окон и балкона", 
       img: serv_2,
-      description: "Комплексная уборка офисных помещений, переговорных, кухонь и зон отдыха"
+      description: "Комплексная уборка офисных помещений, переговорных, кухонь и зон отдыха",
+      link: "/service/general-cleaning", 
     },
   ];
 
@@ -65,6 +73,9 @@ const Services = () => {
         <div className="services-slider">
           <div className="services-track" ref={sliderRef}>
             {services.map((s, i) => (
+              
+
+
               <div key={i} className="service-card">
                 <div 
                   className="service-card-inner"
@@ -73,11 +84,15 @@ const Services = () => {
                   <img src={s.img} alt={s.title} />
                   <p className="service-card-title">{s.title}</p>
                 </div>
+                <Link to={s.link} style={{ textDecoration: 'none' }}>
                 <div className="service-card-description">
                   <h3>{s.title}</h3>
                   <p>{s.description}</p>
                 </div>
+                </Link>
+                
               </div>
+              
             ))}
           </div>
         </div>

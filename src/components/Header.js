@@ -22,7 +22,7 @@ const Header = () => {
             <img src={logo} className="logo" alt="logo"/>
           </div>
           <div className="top-bar-right">
-            <p>+7 (000) 000-00-00</p>
+            <p>+7 (000) 000-00-08</p>
             <button onClick={() => scrollToSection('contact')}>Связаться</button>
           </div>
         </div>
