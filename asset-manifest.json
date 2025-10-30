@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/cleaninpark/static/css/main.00307f07.css",
-    "main.js": "/cleaninpark/static/js/main.8e790de3.js",
+    "main.css": "/cleaninpark/static/css/main.49f82bd8.css",
+    "main.js": "/cleaninpark/static/js/main.1d7c33f5.js",
     "static/media/main_image.png": "/cleaninpark/static/media/main_image.10e2c96cf140f961fb33.png",
-    "static/media/logo1.png": "/cleaninpark/static/media/logo1.3301e23cf0bfa74ac459.png",
+    "static/media/logo1.png": "/cleaninpark/static/media/logo1.04c0cf651069f7de6b15.png",
     "static/media/do2.jpg": "/cleaninpark/static/media/do2.290294f64c63f1e8fdc1.jpg",
     "static/media/do1.jpg": "/cleaninpark/static/media/do1.56831420d3a1c0f9752f.jpg",
     "static/media/serv_4.jpg": "/cleaninpark/static/media/serv_4.ab47e0142f31721f6e66.jpg",
@@ -12,12 +12,13 @@
     "static/media/serv_3.jpg": "/cleaninpark/static/media/serv_3.3e1128af49c64bffcb6d.jpg",
     "static/media/serv_1.jpg": "/cleaninpark/static/media/serv_1.3afe648f3bea0e2bcf2b.jpg",
     "static/media/serv_2.jpg": "/cleaninpark/static/media/serv_2.c866f68c423eb621ca05.jpg",
+    "static/media/avatar.jpg": "/cleaninpark/static/media/avatar.67b254ec610c82105b7c.jpg",
     "index.html": "/cleaninpark/index.html",
-    "main.00307f07.css.map": "/cleaninpark/static/css/main.00307f07.css.map",
-    "main.8e790de3.js.map": "/cleaninpark/static/js/main.8e790de3.js.map"
+    "main.49f82bd8.css.map": "/cleaninpark/static/css/main.49f82bd8.css.map",
+    "main.1d7c33f5.js.map": "/cleaninpark/static/js/main.1d7c33f5.js.map"
   },
   "entrypoints": [
-    "static/css/main.00307f07.css",
-    "static/js/main.8e790de3.js"
+    "static/css/main.49f82bd8.css",
+    "static/js/main.1d7c33f5.js"
   ]
 }
