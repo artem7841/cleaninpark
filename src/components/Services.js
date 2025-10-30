@@ -4,41 +4,44 @@ import serv_1 from "../assets/serv_1.jpg";
 import serv_2 from "../assets/serv_2.jpg";
 import serv_3 from "../assets/serv_3.jpg";
 import serv_4 from "../assets/serv_4.jpg";
-
-import { useParams, Link } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const services = [
     { 
       title: "Генеральная уборка", 
       img: serv_3,
-      description: "Полная уборка всех помещений с чисткой труднодоступных мест и дезинфекцией поверхностей",
+      description: "Полная уборка помещения с чисткой труднодоступных мест и дезинфекцией всех поверхностей",
+      price: "От 170 руб за м²",
       link: "/service/general-cleaning", 
     },
     { 
       title: "После ремонта", 
       img: serv_1,
       description: "Уборка строительной пыли, удаление следов ремонта, чистка окон и подготовка к проживанию",
-      link: "/service/general-cleaning", 
+      price: "От 190 руб за м²",
+      link: "/service/post-renovation", 
     },
     { 
       title: "Поддерживающая", 
       img: serv_4,
       description: "Регулярная уборка для поддержания чистоты: влажная уборка, пылесос, чистка санузлов",
-      link: "/service/general-cleaning", 
+      price: "От 120 руб за м²",
+      link: "/service/maintenance-cleaning", 
     },
     { 
       title: "Для офисов", 
       img: serv_2,
       description: "Комплексная уборка офисных помещений, переговорных, кухонь и зон отдыха",
-      link: "/service/general-cleaning", 
+      price: "От 40 руб за м²",
+      link: "/service/office-cleaning", 
     },
     { 
       title: "Мойка окон и балкона", 
       img: serv_2,
-      description: "Комплексная уборка офисных помещений, переговорных, кухонь и зон отдыха",
-      link: "/service/general-cleaning", 
+      description: "Профессиональная мойка окон, витрин, балконов и лоджий с использованием специальных средств",
+      price: "От 200 руб за м²",
+      link: "/service/window-cleaning", 
     },
   ];
 
@@ -72,27 +75,26 @@ const Services = () => {
         <h2>Наши услуги</h2>
         <div className="services-slider">
           <div className="services-track" ref={sliderRef}>
-            {services.map((s, i) => (
-              
-
-
-              <div key={i} className="service-card">
+            {services.map((service, index) => (
+              <div key={index} className="service-card">
                 <div 
                   className="service-card-inner"
-                  style={{ '--bg-image': `url(${s.img})` }}
+                  style={{ '--bg-image': `url(${service.img})` }}
                 >
-                  <img src={s.img} alt={s.title} />
-                  <p className="service-card-title">{s.title}</p>
+                  <img src={service.img} alt={service.title} />
+                  <p className="service-card-title">{service.title}</p>
                 </div>
-                <Link to={s.link} style={{ textDecoration: 'none' }}>
-                <div className="service-card-description">
-                  <h3>{s.title}</h3>
-                  <p>{s.description}</p>
-                </div>
-                </Link>
                 
+                <div className="service-card-content">
+                  <div className="service-card-description">
+                    <p className="service-short-description">{service.description}</p>
+                    <p className="service-price">{service.price}</p>
+                    <Link to={service.link} className="service-details-link">
+                      Читать подробное описание →
+                    </Link>
+                  </div>
+                </div>
               </div>
-              
             ))}
           </div>
         </div>

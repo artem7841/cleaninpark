@@ -1,12 +1,20 @@
 import React, { useState } from "react";
 
 const Calculator = () => {
-  const [area, setArea] = useState(""); // Изменено: пустая строка вместо 50
+  const [area, setArea] = useState("");
   const [service, setService] = useState("");
-  const [price, setPrice] = useState(null);
+  const [priceRange, setPriceRange] = useState({ min: null, max: null });
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [errors, setErrors] = useState({});
+
+  // Цены за м² для каждого типа услуги
+  const priceRates = {
+    general: { min: 160, max: 180 },
+    support: { min: 110, max: 130 },
+    repair: { min: 180, max: 200 },
+    office: { min: 30, max: 120 }
+  };
 
   const validateForm = () => {
     const newErrors = {};
@@ -25,7 +33,6 @@ const Calculator = () => {
       newErrors.service = "Выберите тип услуги";
     }
 
-    // Изменено: проверка на пустую строку и минимальную площадь
     if (!area || area < 10) {
       newErrors.area = "Площадь должна быть не менее 10 м²";
     }
@@ -39,13 +46,14 @@ const Calculator = () => {
       return;
     }
 
-    let basePrice = 60;
-    if (service === "repair") basePrice = 80;
-    if (service === "support") basePrice = 50;
-    if (service === "office") basePrice = 70;
+    const areaNum = parseInt(area);
+    const rates = priceRates[service];
     
-    // Изменено: преобразуем area в число
-    setPrice(parseInt(area) * basePrice);
+    if (rates) {
+      const minPrice = areaNum * rates.min;
+      const maxPrice = areaNum * rates.max;
+      setPriceRange({ min: minPrice, max: maxPrice });
+    }
   };
 
   const handlePhoneChange = (e) => {
@@ -53,10 +61,14 @@ const Calculator = () => {
     setPhone(value);
   };
 
-  // Изменено: обработчик для площади - только числа
   const handleAreaChange = (e) => {
     const value = e.target.value.replace(/[^\d]/g, '');
     setArea(value);
+  };
+
+  // Форматирование числа с пробелами
+  const formatPrice = (price) => {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   };
 
   return (
@@ -106,19 +118,33 @@ const Calculator = () => {
         {/* Площадь */}
         <div className="form-group">
           <input
-            type="text" // Изменено: text вместо number для лучшего контроля
+            type="text"
             value={area}
             onChange={handleAreaChange}
-            placeholder="Площадь (м²)" // Placeholder будет виден
+            placeholder="Площадь (м²)"
             className={errors.area ? "error" : ""}
           />
           {errors.area && <span className="error-message">{errors.area}</span>}
         </div>
 
-        {/* Кнопка - вне контейнеров полей */}
+        {/* Кнопка */}
         <button onClick={handleCalculate} className="btn2">Получить расчет</button>
       </div>
-      {price && <p className="price-result">Стоимость уборки: <b>{price} ₽</b></p>}
+
+      {/* Результат с вилкой цен */}
+      {priceRange.min && priceRange.max && (
+        <div className="price-result">
+          <p>
+            <b>Примерная стоимость уборки:</b>
+          </p>
+          <p className="price-range">
+            от {formatPrice(priceRange.min)} до {formatPrice(priceRange.max)} ₽
+          </p>
+          <p className="price-note">
+            Для точного расчета обратитесь к менеджеру
+          </p>
+        </div>
+      )}
     </section>
   );
 };

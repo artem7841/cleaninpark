@@ -2,6 +2,7 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import "../style/About.css";
+import avatar from "../assets/avatar.jpg";
 
 
 const About = () => {
@@ -69,7 +70,7 @@ const About = () => {
           <div className="about-image">
             <div className="founder-photo">
               <img 
-                src="/images/founder.jpg" 
+                src={avatar} 
                 className="founder-img"
               />
               <div className="photo-frame"></div>

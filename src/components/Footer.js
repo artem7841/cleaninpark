@@ -33,7 +33,7 @@ const Footer = () => {
 
       {/* Нижняя полоса */}
       <div className="footer-bottom">
-        <p>© CleaninPark, 2025</p>
+        <p>© CleanInPark, 2025</p>
       </div>
       </div>
     </footer>

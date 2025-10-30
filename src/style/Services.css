@@ -39,12 +39,12 @@
 
 .service-card-inner {
   position: relative;
-  width: 100%; /* Исправлено: занимает всю ширину */
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding-bottom: 30px; /* Добавлено: отступ снизу для названия */
+  padding-bottom: 30px;
   text-align: center;
 }
 
@@ -71,7 +71,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 50%; /* Увеличено: градиент в нижней 50% */
+  height: 50%;
   background: linear-gradient(
     to top,
     rgba(0, 0, 0, 0.8) 0%,
@@ -95,19 +95,19 @@
   color: white;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease;
-  padding: 30px 15px; /* Добавлено: отступы по бокам */
+  padding: 30px 15px;
 }
 
-/* Описание карточки */
-.service-card-description {
+/* Контент карточки */
+.service-card-content {
   position: absolute;
   top: 100%;
   left: 0;
-  width: 100%; /* Исправлено: занимает всю ширину */
+  width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.9);
   color: white;
-  padding: 30px 20px;
+  padding: 25px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -119,17 +119,50 @@
   box-sizing: border-box;
 }
 
-.service-card-description h3 {
-  font-size: 1.3rem;
-  margin-bottom: 35px;
-  color: white;
+.service-card-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  gap: 15px;
 }
 
-.service-card-description p {
+.service-short-description {
   font-size: 0.95rem;
   line-height: 1.5;
   margin: 0;
   opacity: 0.9;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.service-price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #65D660;
+  margin: 0;
+}
+
+.service-details-link {
+  color: #65D660;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  margin-top: auto;
+  padding: 8px 16px;
+  border: 1px solid #65D660;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.service-details-link:hover {
+  color: white;
+  background-color: #65D660;
+  text-decoration: none;
 }
 
 /* Hover эффекты для десктопа */
@@ -153,45 +186,94 @@
     transform: translateY(-20px);
   }
 
-  .service-card:hover .service-card-description {
+  .service-card:hover .service-card-content {
     top: 0;
   }
 }
 
 /* Для планшетов и телефонов - всегда показываем описание */
 @media (max-width: 1024px) {
-  .service-card-description {
+  .service-card-content {
     top: 0;
     background: rgba(0, 0, 0, 0.85);
-  }
-  
-  .service-card-title {
-    display: none; /* Скрываем название так как есть в описании */
-  }
-  
-  .service-card-inner::after {
-    display: none; /* Скрываем градиент на мобильных */
-  }
-}
-
-/* Для очень маленьких экранов - адаптируем размеры */
-@media (max-width: 480px) {
-  .service-card {
-    width: 280px;
-    height: 290px;
-  }
-  
-  .service-card-description {
     padding: 20px 15px;
   }
   
-  .service-card-description h3 {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
+  .service-card-title {
+    display: none;
   }
   
-  .service-card-description p {
-    font-size: 0.85rem;
+  .service-card-inner::after {
+    display: none;
+  }
+
+  /* Увеличиваем шрифты для мобильных устройств */
+  .service-short-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .service-price {
+    font-size: 1.3rem;
+  }
+
+  .service-details-link {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+  }
+}
+
+/* Для очень маленьких экранов - еще больше увеличиваем шрифты */
+@media (max-width: 480px) {
+  .service-card {
+    width: 280px;
+    height: 320px; /* Увеличиваем высоту для большего текста */
+  }
+  
+  .service-card-content {
+    padding: 25px 20px;
+  }
+  
+  /* Еще больше увеличиваем шрифты на очень маленьких экранах */
+  .service-short-description {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    font-weight: 500;
+  }
+
+  .service-price {
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  .service-details-link {
+    font-size: 1.2rem;
+    padding: 12px 24px;
+    font-weight: 600;
+  }
+}
+
+/* Для сверхмаленьких экранов */
+@media (max-width: 360px) {
+  .service-card {
+    width: 260px;
+    height: 340px;
+  }
+  
+  .service-card-content {
+    padding: 20px 15px;
+  }
+  
+  .service-short-description {
+    font-size: 1.1rem;
+  }
+
+  .service-price {
+    font-size: 1.3rem;
+  }
+
+  .service-details-link {
+    font-size: 1.1rem;
   }
 }
 
@@ -250,5 +332,7 @@
 @media (max-width: 480px) {
   .service-card {
     width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
   }
 }
