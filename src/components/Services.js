@@ -4,6 +4,8 @@ import serv_1 from "../assets/serv_1.jpg";
 import serv_2 from "../assets/serv_2.jpg";
 import serv_3 from "../assets/serv_3.jpg";
 import serv_4 from "../assets/serv_4.jpg";
+import serv_6 from "../assets/posle2.jpg";
+import serv_5 from "../assets/serv5.jpg";
 import { Link } from "react-router-dom";
 
 const Services = () => {
@@ -38,10 +40,17 @@ const Services = () => {
     },
     { 
       title: "Мойка окон и балкона", 
-      img: serv_2,
+      img: serv_5,
       description: "Профессиональная мойка окон, витрин, балконов и лоджий с использованием специальных средств",
       price: "От 200 руб за м²",
       link: "/service/window-cleaning", 
+    },
+    { 
+      title: "Дополнительные услуги", 
+      img: serv_6,
+      description: "Точечное решение проблем с чистотой",
+      price: "От 500 руб",
+      link: "/service/additional-services", 
     },
   ];
 

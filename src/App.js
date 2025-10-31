@@ -9,26 +9,32 @@ import Calculator from "./components/Calculator";
 import Contacts from "./components/Contacts";
 import Footer from "./components/Footer";
 import HowWork from "./components/HowWork";
-import ServiceDetail from "./components/ServiceDetail.js"; // ← ДОБАВЬ
+import ServiceDetail from "./components/ServiceDetail.js";
+import PrivacyPolicy from "./components/PrivacyPolicy.js";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
+        
         <Routes>
           <Route path="/" element={
             <>
+            <Header />
               <About />
-              <Services />
               <Advantages />
+              <Services />
+              <Calculator />
+      
               <Portfolio />
               <HowWork/>
-              <Calculator />
               <Contacts />
+              
+              
             </>
           } />
           <Route path="/service/:serviceId" element={<ServiceDetail />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
         <Footer />
       </div>
