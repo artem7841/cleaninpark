@@ -1,6 +1,6 @@
 {
-  "short_name": "CleanInPark",
-  "name": "CleanInPark - Клининг услуг",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",
