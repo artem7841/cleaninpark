@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/cleaninpark/static/css/main.6fc08c14.css",
-    "main.js": "/cleaninpark/static/js/main.8d3b1e33.js",
+    "main.js": "/cleaninpark/static/js/main.ca9845f5.js",
     "static/media/main_image.png": "/cleaninpark/static/media/main_image.3f252fcb2646cacf07fb.png",
     "static/media/logo1.png": "/cleaninpark/static/media/logo1.04c0cf651069f7de6b15.png",
     "static/media/do7.jpg": "/cleaninpark/static/media/do7.4d655271c2105a3ce454.jpg",
@@ -51,6 +51,6 @@
   },
   "entrypoints": [
     "static/css/main.6fc08c14.css",
-    "static/js/main.8d3b1e33.js"
+    "static/js/main.ca9845f5.js"
   ]
 }
